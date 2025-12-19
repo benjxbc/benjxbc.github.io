@@ -7,23 +7,29 @@
 }
 
 body {
-    background-color: #121212; /* dark background for modern look */
+    background-color: #0d0d0d; /* dark background */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #ffffff;
+    color: #fff;
 }
 
 /* Container card */
 .container {
-    background-color: #1f1f1f; /* card background */
+    background-color: #1a1a1a;
     padding: 2.5rem 2rem;
     border-radius: 16px;
     text-align: center;
     width: 90%;
     max-width: 400px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(0, 255, 234, 0.8);
 }
 
 /* Profile image */
@@ -32,7 +38,7 @@ body {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #00ffea; /* neon border accent */
+    border: 3px solid #00ffea; /* neon border */
     margin-bottom: 1rem;
 }
 
@@ -40,7 +46,8 @@ body {
 h1 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    color: #00ffea; /* neon accent for name */
+    color: #00ffea; /* neon accent */
+    text-shadow: 0 0 10px #00ffea;
 }
 
 p {
@@ -50,26 +57,34 @@ p {
 }
 
 /* Buttons */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
 .btn {
     display: inline-block;
     background-color: #00ffea;
-    color: #121212;
+    color: #0d0d0d;
     padding: 0.6rem 1.5rem;
-    margin: 0.3rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
 }
 
 .btn:hover {
     background-color: transparent;
-    border: 2px solid #00ffea;
     color: #00ffea;
+    border: 2px solid #00ffea;
     transform: translateY(-3px);
+    box-shadow: 0 0 20px #00ffea;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 500px) {
     .container {
         padding: 2rem 1.5rem;
