@@ -17,33 +17,41 @@ body {
     overflow: hidden;
 }
 
-/* Background screenshot overlay */
-.background {
+/* Pixelated animated background */
+.pixel-background {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('gaming-background.jpg') center/cover no-repeat;
-    filter: brightness(0.2);
+    width: 200%;
+    height: 200%;
+    background-size: 20px 20px;
+    background-image:
+        linear-gradient(#111 1px, transparent 1px),
+        linear-gradient(90deg, #111 1px, transparent 1px);
+    animation: movePixels 15s linear infinite;
     z-index: -1;
+}
+
+@keyframes movePixels {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50%, -50%); }
 }
 
 /* Container card */
 .container {
-    background-color: rgba(26, 26, 26, 0.9);
+    background-color: rgba(26, 26, 26, 0.95);
     padding: 2.5rem 2rem;
     border-radius: 16px;
     text-align: center;
     width: 90%;
     max-width: 450px;
-    box-shadow: 0 0 20px rgba(0, 255, 234, 0.5);
+    box-shadow: 0 0 25px rgba(0, 255, 234, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .container:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 40px rgba(0, 255, 234, 0.8);
+    box-shadow: 0 0 50px rgba(0, 255, 234, 0.8);
 }
 
 /* Profile image */
@@ -61,7 +69,7 @@ h1 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
     color: #00ffea;
-    text-shadow: 0 0 10px #00ffea;
+    text-shadow: 0 0 15px #00ffea;
 }
 
 p {
